@@ -14,6 +14,10 @@
 #include"choose sub.cpp"
 #include"register.h"
 
+/// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
+//#include <QUrl>
+//#include <QtMultimedia/QMediaPlayer>
+//#include <QtMultimedia/QAudioOutput>
 class QtWidgetsApplication3 : public QMainWindow
 {
     Q_OBJECT
@@ -26,7 +30,9 @@ public:
     void start_up();
     /*void choose_sub();*/
    
-    
+ 
+   
+
 private slots:
    /* void on_pushButton_23_clicked();*/
     void on_personal_details_clicked();
@@ -46,7 +52,7 @@ private slots:
     //void on_pushButton_17_clicked();
     void on_delete_users_clicked();
     void on_change_users_clicked();
-    void on_admin_mainmenu_clicked();
+    
     void on_confirmride_clicked();
     void on_pushButton_16_clicked();
     void on_pushButton_20_clicked();
@@ -104,9 +110,17 @@ private slots:
     void on_Chargeing_admin_balance_clicked();
     void on_pushButton_24_clicked();
     void on_pushButton_25_clicked();
+   
 
-  
-
+  //admin delete station
+    void on_delete55_clicked();
+    void on_pushButton_26_clicked(); //delete
+    void on_pushButton_27_clicked(); //back
+    void shiftStationsUp(int line, int index);
+    bool isInterchangeStation(const QString& name);
+    void saveStationsToFile();
+    void write_stations();
+    void read_stations();
 
     //change subsc #admin 
     void on_pushButton_23_clicked();
@@ -164,10 +178,26 @@ private slots:
     void on_spinBox_wallet_zones_valueChanged(int value);
     void refreshSubscriptionTable();
     void on_deletesub_clicked();
- 
+    void on_backtosub_clicked();
+
+    /// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
+
+  /*  void playTrainSound();
+    void restartBackgroundMusic();    
+    void onTrainSoundFinished();*/
+
+
 private:
     Ui::MainWindow* ui;  // Use Ui::MainWindow, not Ui::QtWidgetsApplication3
-   
+    
+    /// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
+    
+ /*   QMediaPlayer* backgroundMusic;
+    QMediaPlayer* trainSound;
+    QAudioOutput* audioOutput;
+    QAudioOutput* trainAudioOutput;*/
+
+
 signals: 
     void switchToDialog();
 };

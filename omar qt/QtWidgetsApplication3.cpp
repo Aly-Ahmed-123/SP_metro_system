@@ -68,7 +68,8 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
         });
 
 
-    connect(ui->a_wallet, &QPushButton::clicked, this, [=]() {
+    connect(ui->a_wallet, &QPushButton::clicked, this, [=]()
+        {
         bool ok;
         int amount = ui->wallet_admin_enter_balancew->text().toInt(&ok);
 
@@ -210,6 +211,36 @@ void QtWidgetsApplication3::setPage(int index)
     ui->stackedWidget->setCurrentIndex(index);
 
 }
+
+
+
+/// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
+
+//void QtWidgetsApplication3::playTrainSound()
+//{
+//
+//    if (trainSound->isPlaying()) {
+//        trainSound->stop();
+//    }
+//
+//
+//    if (backgroundMusic->isPlaying()) {
+//        backgroundMusic->stop();
+//    }
+//
+//
+//    trainSound->play();
+//}
+//
+//void QtWidgetsApplication3::restartBackgroundMusic()
+//{
+//    backgroundMusic->play();
+//}
+//
+//void QtWidgetsApplication3::onTrainSoundFinished()
+//{
+//    backgroundMusic->play();
+//}
 
 
 
@@ -627,19 +658,19 @@ void QtWidgetsApplication3::on_pushButton_submit_clicked()
 //IF YOU PUT IT IT WILL BE A BIG MISTAKE
 
 
-void QtWidgetsApplication3::start_up()
-{
+void QtWidgetsApplication3::start_up(){
 
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
 
 }
 
 
+// ? ERror here
 
-void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->admin);
-}
+//void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
+//{
+//    ui->stackedWidget->setCurrentWidget(ui->admin);
+//}
 
 
 //DONT PUT THE USERNAME SAVE OR EMAIL SAVE OR TOEDIT HERE 
@@ -1249,7 +1280,7 @@ void QtWidgetsApplication3::on_back10_clicked() {
 void QtWidgetsApplication3::on_back11_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->subscription_settings);
 }
-void QtWidgetsApplication3::on_back12_clicked() {
+void QtWidgetsApplication3::on_backtosub_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->admin);
 }
 void QtWidgetsApplication3::on_exit1_clicked() {
@@ -1266,6 +1297,9 @@ void QtWidgetsApplication3::on_exit02_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
 
 }
+
+
+
 
 
 void QtWidgetsApplication3::on_exit4_clicked() {
