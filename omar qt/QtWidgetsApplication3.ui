@@ -3130,7 +3130,7 @@ background-position: center;
      </widget>
     </widget>
     <widget class="QWidget" name="add_station">
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="StationName">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -3143,53 +3143,43 @@ background-position: center;
      <widget class="QLabel" name="label_12">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>170</y>
-        <width>81</width>
-        <height>21</height>
+        <x>40</x>
+        <y>160</y>
+        <width>131</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>station name :</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;station name :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_13">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>240</y>
-        <width>81</width>
-        <height>16</height>
+        <x>40</x>
+        <y>230</y>
+        <width>131</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>station line :</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;station line :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>300</y>
-        <width>91</width>
-        <height>20</height>
+        <x>30</x>
+        <y>290</y>
+        <width>141</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>station number :</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;station number :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
-      <property name="geometry">
-       <rect>
-        <x>230</x>
-        <y>230</y>
-        <width>72</width>
-        <height>24</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLineEdit" name="StationNumber">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -3197,6 +3187,55 @@ background-position: center;
         <width>113</width>
         <height>24</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="NewStation">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>240</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>confirm</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="mohamed_back">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>450</y>
+        <width>171</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>back to the previous page</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="stationLine">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>240</y>
+        <width>113</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_54">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>60</y>
+        <width>191</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Add Stations &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
@@ -4322,7 +4361,7 @@ background-position: center;
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

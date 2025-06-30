@@ -58,7 +58,7 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
 
 
 
-}
+
     ui->user_input_balance->setMaximum(10000.0);  // or whatever max you want
     ui->user_input_balance->setRange(0.0, 10000.0);     // sets both min and max
     ui->user_input_balance->setSingleStep(0.5);       // how much it increases/decreases per step
@@ -83,7 +83,118 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
 }
 
 
-  
+void  QtWidgetsApplication3::on_NewStation_clicked()
+{
+    int num_of_station_line1 = 0, num_of_station_line2 = 0, num_of_station_line3 = 0;
+
+    for (int i = 0; i < MAX_STATIONS_PER_LINE;i++)
+    {
+        for (int j = 0;j < NUM_LINES;j++)
+        {
+            if (NUM_LINES == 0 && allStations[i][j].name != "-")
+            {
+                num_of_station_line1++;
+            }
+            else if (NUM_LINES == 1 && allStations[i][j].name != "-")
+            {
+                num_of_station_line2++;
+            }
+            else if (NUM_LINES == 2 && allStations[i][j].name != "-")
+            {
+                num_of_station_line3++;
+            }
+
+        }
+
+    }
+
+    QString stationname = ui->StationName->text().trimmed();
+    QString station_line = ui->stationLine->text().trimmed();
+    QString stationnumber = ui->StationNumber->text().trimmed();
+
+    bool ok1, ok2;
+    int line = station_line.toInt(&ok1);
+    int number = stationnumber.toInt(&ok2);
+
+    for (int i = 0; i < MAX_STATIONS_PER_LINE;i++)
+    {
+        for (int j = 0;j < NUM_LINES;j++)
+        {
+            if (stationname.toStdString() == allStations[i][j].name)
+            {
+                QMessageBox::information(this, "name", "there is already a station with this name");
+                return;
+            }
+        }
+    }
+
+    if (!ok1 || station_line.toStdString() < "1" || station_line.toStdString() > "3")
+    {
+        QMessageBox::information(this, "line number", "this line does not exist choose line (1 --> 3)");
+        return;
+    }
+
+    if (!ok2 || stationnumber.toStdString() <= "0" || stationnumber.toStdString() > "40")
+    {
+        QMessageBox::information(this, "station number", "this number does not exist choose number (1 --> 40)");
+        return;
+    }
+    line--; number--;
+
+    if ((line == 0 && number < num_of_station_line1) || (line == 1 && number < num_of_station_line2) || (line == 2 && number < num_of_station_line3))
+    {
+        for (int i = 38; i >= number; --i) {
+            allStations[i + 1][line] = allStations[i][line];
+            if (allStations[i + 1][line].name != "-" && allStations[i + 1][line].name != "") {
+                allStations[i + 1][line].number += 1;
+            }
+        }
+        allStations[number][line].name = stationname.toStdString();
+        allStations[number][line].line = line + 1;
+
+        if (line == 0)
+        {
+            allStations[number][line].number = number+1;
+        }
+        else if (line == 1)
+        {
+            allStations[number][line].number = 41 + number;
+        }
+        else if (line == 2)
+        {
+            allStations[number][line].number = 81 + number;
+        }
+    }
+
+    else
+    {
+        allStations[number][line].name = stationname.toStdString();
+        allStations[number][line].line = line + 1;
+
+        if (line == 0)
+        {
+            allStations[number][line].number = num_of_station_line1;
+        }
+        else if (line == 1)
+        {
+            allStations[number][line].number = 40+num_of_station_line2;
+        }
+        else if (line == 2)
+        {
+            allStations[number][line].number = 80+num_of_station_line3;
+        }
+    }
+
+    QMessageBox::information(this, "adding station", "you added a new station successfully");
+
+    buildGraph();
+
+}
+
+void  QtWidgetsApplication3::on_mohamed_back_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->ride_settings);
+}
 
 
 QtWidgetsApplication3::~QtWidgetsApplication3()
@@ -407,6 +518,11 @@ void QtWidgetsApplication3::on_pushButton_13_clicked()
     ui->stackedWidget_2->setCurrentWidget(ui->page_3);
 }
 
+void QtWidgetsApplication3::on_pushButton_20_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->add_station);
+}
+
 void QtWidgetsApplication3::on_spinBox_year_zones_valueChanged(int value)
 {
     ui->tableWidget_year_zonePrices->clearContents();
@@ -499,23 +615,6 @@ void QtWidgetsApplication3::on_pushButton_submit_clicked()
     refreshSubscriptionTable();
 }
 
-void  QtWidgetsApplication3::on_confirmride_clicked()
-{
-
-    string start_st, end_st;
-    start_st = ui->startstation->currentText().toStdString();
-    end_st = ui->endstation->currentText().toStdString();
-  
-    
-    
-    buildGraph();
-
-     
-    // Assuming this runs after user chooses start and end station
-    int real_zone = 0;
-
-
-
 
 // DOOOONT PUT RECHARGE HERE OR SUBMIT BALANCE 
 //DONT DO THAT I WILL KILL YOU 
@@ -550,7 +649,7 @@ void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
 //I 
 
 
-}
+
 void QtWidgetsApplication3::on_pushButton_16_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->ride_settings);
 }
@@ -1138,9 +1237,9 @@ void QtWidgetsApplication3::on_back8_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
 }
 
-void QtWidgetsApplication3::on_back12_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->current_data);
-}
+//void QtWidgetsApplication3::on_back12_clicked() {
+//    ui->stackedWidget->setCurrentWidget(ui->current_data);
+//}
 void QtWidgetsApplication3::on_back9_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->subscription_settings);
 }
