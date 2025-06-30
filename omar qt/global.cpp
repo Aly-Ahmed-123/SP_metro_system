@@ -17,7 +17,7 @@ int chosenSubscriptionIndex = -1;
 short indexofuser = 0;
 short number_of_users_in_array = 0;
 short hist_rides = 0;
-
+int numStationsInLine[3];
 // Boolean flags
 bool DesireToCreateAcc = true;
 bool sign = false;

@@ -84,7 +84,7 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
     backgroundMusic->setAudioOutput(audioOutput);
 
     backgroundMusic->setSource(QUrl::fromLocalFile("metro_music.mp3"));
-    audioOutput->setVolume(0.9f);
+    audioOutput->setVolume(0.0f);
 
     connect(backgroundMusic, &QMediaPlayer::mediaStatusChanged, this, [this](QMediaPlayer::MediaStatus status) {
         if (status == QMediaPlayer::EndOfMedia) {
@@ -101,7 +101,7 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
     trainSound->setAudioOutput(trainAudioOutput);
 
     trainSound->setSource(QUrl::fromLocalFile("metro_move.mp3"));
-    trainAudioOutput->setVolume(1.0f);
+    trainAudioOutput->setVolume(0.0f);
 
 
     connect(trainSound, &QMediaPlayer::mediaStatusChanged, this, [this](QMediaPlayer::MediaStatus status) {

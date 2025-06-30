@@ -28,8 +28,8 @@ public:
     void start_up();
    // void choose_sub();
    
-    int numStationsInLine[3];
-    Station allStations[3][MAX_STATIONS_PER_LINE];
+ 
+   
 
 private slots:
    /* void on_pushButton_23_clicked();*/
