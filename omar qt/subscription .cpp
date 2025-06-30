@@ -138,7 +138,10 @@
 //        int planIndex = selectedItem->data(Qt::UserRole).toInt();
 //        QString planType = selectedItem->data(Qt::UserRole + 1).toString();
 //
-//        user_subscriptions& userSub = arr_users[indexofuser].sub;
+//        user_subscriptions& 
+// 
+// 
+// = arr_users[indexofuser].sub;
 //        int subIndex = chosenSubscriptionIndex;
 //
 //        userSub.subscription_type = arr_subscription[subIndex].plan_name;
@@ -781,7 +784,7 @@ void QtWidgetsApplication3::on_cancel_renew_clicked()
 
 void QtWidgetsApplication3::on_change_sub_clicked()
 {
-    choose_sub();
+    /*choose_sub();*/
     ui->stackedWidget->setCurrentWidget(ui->subscriptions);
 
 }
