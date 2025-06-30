@@ -47,6 +47,7 @@ private slots:
     void on_pushButton_9_clicked();
     void on_pushButton_10_clicked();
     void on_pushButton_15_clicked();
+    void on_back_user_clicked();
     void on_NewStation_clicked();
     void on_mohamed_back_clicked();
     //void on_pushButton_17_clicked();
