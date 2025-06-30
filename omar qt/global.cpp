@@ -24,6 +24,7 @@ bool sign = false;
 bool realadmin_by_keypass = false;
 bool why=false;
 bool why_grater=false;
+bool please = false;
 // User session strings
 string name = "";
 string password = "";

@@ -46,7 +46,9 @@ private slots:
     void on_change_users_clicked();
     void on_admin_mainmenu_clicked();
     void on_confirmride_clicked();
-    void handleWalletRecharge();
+    void handleWalletRecharge();//imp for admin choose user subsc 
+    void user_handle_wallet_recharge();//imp for subsc in user
+    
     //user information change
 
     void on_TOEDIT_clicked();
@@ -117,7 +119,8 @@ private slots:
  
 private:
     Ui::MainWindow* ui;  // Use Ui::MainWindow, not Ui::QtWidgetsApplication3
-   
+    bool isChoosingSubscriptionAfterRecharge; // Add this
+    int savedSubscriptionIndex;               // Optional: save last selected subsc index
 signals: 
     void switchToDialog();
 };

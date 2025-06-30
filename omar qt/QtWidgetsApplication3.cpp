@@ -22,7 +22,8 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
 
     ui->user_input_balance->setMaximum(10000.0);  // or whatever max you want
     ui->user_input_balance->setRange(0.0, 10000.0);     // sets both min and max
-    ui->user_input_balance->setSingleStep(0.5);       // how much it increases/decreases per step
+    ui->user_input_balance->setSingleStep(0.5);    
+    // how much it increases/decreases per step
     connect(ui->admin_rech_balance_in_subsc, &QPushButton::clicked, this, [=]() {
         // Navigate to charge balance page
         ui->stackedWidget->setCurrentWidget(ui->charge_balance);
@@ -41,6 +42,59 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
         // Call handleWalletRecharge to process the recharge
         handleWalletRecharge();
         });
+    //sound begin 
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //sound end 
+    connect(ui->confirm_wallet_balance, &QPushButton::clicked, this, &QtWidgetsApplication3::user_handle_wallet_recharge);
+
+   /* connect(ui->wallet_submit_button, &QPushButton::clicked, this, &QtWidgetsApplication3::user_handle_wallet_recharge);*/
+ 
 }
 
 
