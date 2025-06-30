@@ -23,6 +23,7 @@ extern int switching_index;
 extern int arr_sub_insights[1000];
 extern int admin_chosen_user;
 extern int chosenSubscriptionIndex ;
+extern int numStationsInLine[3];
 extern short indexofuser;
 extern short number_of_users_in_array;
 extern short hist_rides;

@@ -1280,6 +1280,10 @@ void QtWidgetsApplication3::on_back10_clicked() {
 void QtWidgetsApplication3::on_back11_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->subscription_settings);
 }
+void QtWidgetsApplication3::on_back12_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->welcome2);
+}
 void QtWidgetsApplication3::on_backtosub_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->admin);
 }
