@@ -146,6 +146,19 @@
        </rect>
       </property>
      </widget>
+     <widget class="QPushButton" name="recharge_user_balance_in_1st_subsc">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>580</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>recharge</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="subscription_settings">
      <widget class="QLabel" name="label_12">
@@ -1411,7 +1424,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </rect>
       </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>submit</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_45">
@@ -1473,7 +1486,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </rect>
       </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>Back</string>
       </property>
      </widget>
     </widget>

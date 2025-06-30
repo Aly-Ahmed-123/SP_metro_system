@@ -33,6 +33,7 @@ extern bool sign;
 extern bool realadmin_by_keypass;
 extern bool why;
 extern bool why_grater;
+extern bool please;
 
 extern string name;
 extern string password;

@@ -2,6 +2,11 @@
 //DONT PLAY IN SUBSCRIPTION .CPP FILE I WILL KILL YOU 
 //ONLY WHO CAN ENTER IS ALY AND  OMAR AND HAYA ANY ONE IS BANNED IN THIS FILE 
 //
+// 
+// 
+ 
+ 
+
 //void QtWidgetsApplication3::choose_sub()
 //{   // Set username and navigate to admin subscription page
 //    
@@ -13,7 +18,7 @@
 //    ui->admin_zone_list->clear();
 //
 //    // Hide recharge button by default
-//    ui->admin_rech_balance_in_subsc->setVisible(false);
+//    ui->recharge_main_bala_in_wallet->setVisible(false);
 //
 //    if (num_of_subsc == 0) {
 //        ui->listWidget_subscriptions->addItem("No available subscriptions");
@@ -122,7 +127,7 @@
 //        });
 //
 //    // Connect submit button
-//    connect(ui->submit_admin_subsc, &QPushButton::clicked, this, [=]() {
+//    connect(ui->pushButton_11, &QPushButton::clicked, this, [=]() {
 //        // Get selected plan
 //        QListWidgetItem* selectedItem = ui->label_subscription_details->currentItem();
 //        if (!selectedItem) {
@@ -186,17 +191,17 @@
 //                QString::fromStdString(arr_users[indexofuser].username));
 //
 //            // Redirect to wallet continuation page
-//            ui->stackedWidget->setCurrentWidget(ui->admin_wallet_contin);
+//            ui->stackedWidget->setCurrentWidget(ui->renew_in_wallet_subsc);
 //
 //            // ✅ UPDATE LABEL TO SHOW CURRENT WALLET BALANCE
-//            ui->label_current_balance->setText(
+//            ui->old_wallet_balance->setText(
 //                QString("Current Wallet Balance: %1 LE")
 //                .arg(arr_users[indexofuser].sub.balancew)
 //            );
 //
 //            // Clear input field and set focus
-//            ui->wallet_admin_enter_balancew->clear();
-//            ui->wallet_admin_enter_balancew->setFocus();
+//            ui->wallet_new_balance->clear();
+//            ui->wallet_new_balance->setFocus();
 //
 //            return;
 //        }
@@ -209,9 +214,9 @@
 //                "❌ Insufficient balance. Please recharge your account.");
 //
 //            // Show and connect recharge button
-//            ui->admin_rech_balance_in_subsc->setVisible(true);
-//            connect(ui->admin_rech_balance_in_subsc, &QPushButton::clicked, this, [=]() {
-//                ui->stackedWidget->setCurrentWidget(ui->charge_balance);
+//            ui->subscriptions->setVisible(true);
+//            connect(ui->recharge_main_bala_in_wallet, &QPushButton::clicked, this, [=]() {
+//                ui->stackedWidget->setCurrentWidget(ui->charge_user_balance_page);
 //                });
 //
 //            return;
@@ -252,80 +257,285 @@
 //            QString::fromStdString(arr_users[indexofuser].username));
 //
 //        // Hide recharge button after successful purchase
-//        ui->admin_rech_balance_in_subsc->setVisible(false);
-//        ui->stackedWidget->setCurrentWidget(ui->admin);
+//        ui->recharge_main_bala_in_wallet->setVisible(false);
+//        ui->stackedWidget->setCurrentWidget(ui->welcome2_2);
 //        });
 //}
-//
-//
-//
-//
-//
-//void QtWidgetsApplication3::handleWalletRecharge() {
-//    bool ok;
-//    int amount = ui->wallet_admin_enter_balancew->text().toInt(&ok);
-//
-//    if (!ok || amount <= 0) {
-//        QMessageBox::warning(this, "Invalid Input", "Please enter a valid positive number.");
-//        return;
-//    }
-//
-//    // Get current user and selected subscription
-//    user_subscriptions& userSub = arr_users[admin_chosen_user].sub;
-//    const wallet& w = arr_subscription[chosenSubscriptionIndex].wallet_sub;
-//
-//    int currentWalletBalance = userSub.balancew;
-//    int cardBalanceLimit = w.card_balance;
-//    int fundMultiple = w.fund_multiple;
-//
-//    // 🔍 Check: Must be multiple of fund_multiple
-//    if (amount % fundMultiple != 0) {
-//        QMessageBox::warning(this, "Invalid Amount",
-//            QString("Amount must be a multiple of %1 LE.").arg(fundMultiple));
-//        return;
-//    }
-//
-//    // 🔍 Check: New wallet balance must not exceed card_balance
-//    if (currentWalletBalance + amount > cardBalanceLimit) {
-//        QMessageBox::warning(this, "Balance Exceeded",
-//            QString("Total wallet balance cannot exceed %1 LE.").arg(cardBalanceLimit));
-//        return;
-//    }
-//
-//    // 🔍 Check: User has enough main balance
-//    long long& mainBalance = arr_users[admin_chosen_user].balance;
-//    if (mainBalance < amount) {
-//        QMessageBox::warning(this, "Insufficient Balance",
-//            "❌ Insufficient main balance. Please recharge your account.");
-//
-//        // Show and connect recharge button
-//        ui->admin_rech_balance_in_wallet->setVisible(true);
-//        connect(ui->admin_rech_balance_in_wallet, &QPushButton::clicked, this, [=]() {
-//            ui->stackedWidget->setCurrentWidget(ui->charge_balance);
-//            });
-//
-//        return;
-//    }
-//
-//    // Deduct from main balance and add to wallet
-//    mainBalance -= amount;
-//    userSub.balancew += amount;
-//
-//    // Notify and update label
-//    QMessageBox::information(this, "Success",
-//        QString("✅ Successfully added %1 LE to wallet.").arg(amount));
-//
-//    // ✅ Update label to reflect new balance
-//    ui->label_current_balance->setText(
-//        QString("Current Wallet Balance: %1 LE").arg(userSub.balancew));
-//
-//    // Clear input field
-//    ui->wallet_admin_enter_balancew->clear();
-//
-//
-//    // Optional: Go back to admin page
-//    ui->stackedWidget->setCurrentWidget(ui->admin);
-//}
+
+void QtWidgetsApplication3::choose_sub()
+{
+    // Navigate to user subscription page
+    ui->stackedWidget->setCurrentWidget(ui->subscriptions);
+
+    // Clear previous data
+    ui->listWidget_subscriptions->clear();
+    ui->label_subscription_details->clear();
+    ui->subsc_zone_choice->clear();
+
+    // Hide recharge button by default
+    ui->recharge_user_balance_in_1st_subsc->setVisible(false);
+
+    if (num_of_subsc == 0) {
+        ui->listWidget_subscriptions->addItem("No available subscriptions");
+        return;
+    }
+
+    // Populate main subscription plans
+    for (int i = 0; i < num_of_subsc; i++) {
+        QString planName = QString::fromStdString(arr_subscription[i].plan_name);
+        QListWidgetItem* item = new QListWidgetItem(QString::number(i + 1) + " - " + planName);
+        item->setData(Qt::UserRole, i); // Store index
+        ui->listWidget_subscriptions->addItem(item);
+    }
+
+    // Handle subscription selection
+    connect(ui->listWidget_subscriptions, &QListWidget::itemClicked, this, [this](QListWidgetItem* item) {
+        int subIndex = item->data(Qt::UserRole).toInt();
+        chosenSubscriptionIndex = subIndex;
+
+        // Clear details
+        ui->label_subscription_details->clear();
+        ui->subsc_zone_choice->clear();
+
+        if (arr_subscription[subIndex].fixed == 'y') {
+            // Fixed subscriptions: Monthly / Yearly
+            for (int i = 0; i < arr_subscription[subIndex].month_count; i++) {
+                const auto& m = arr_subscription[subIndex].month_sub[i];
+                QString zonesPrices;
+                for (int z = 0; z < 4 && z < 30 && m.zonesPrice[z] > 0; z++) {
+                    zonesPrices += QString("\nZone %1: %2 LE").arg(z + 1).arg(m.zonesPrice[z]);
+                }
+                QString planText = QString("Monthly: %1 month(s), %2 trips").arg(m.duration).arg(m.no_of_trips);
+                if (!zonesPrices.isEmpty()) planText += zonesPrices;
+
+                QListWidgetItem* item = new QListWidgetItem(planText);
+                item->setData(Qt::UserRole, i);
+                item->setData(Qt::UserRole + 1, "month");
+                ui->label_subscription_details->addItem(item);
+            }
+
+            for (int i = 0; i < arr_subscription[subIndex].year_count; i++) {
+                const auto& y = arr_subscription[subIndex].year_sub[i];
+                QString zonesPrices;
+                for (int z = 0; z < 4 && z < 30 && y.zonesPrice[z] > 0; z++) {
+                    zonesPrices += QString("\nZone %1: %2 LE").arg(z + 1).arg(y.zonesPrice[z]);
+                }
+                QString planText = QString("Yearly: %1 year(s), %2 trips").arg(y.duration).arg(y.no_of_trips);
+                if (!zonesPrices.isEmpty()) planText += zonesPrices;
+
+                QListWidgetItem* item = new QListWidgetItem(planText);
+                item->setData(Qt::UserRole, i);
+                item->setData(Qt::UserRole + 1, "year");
+                ui->label_subscription_details->addItem(item);
+            }
+
+            // Populate zone list
+            for (int z = 1; z <= 4; z++) {
+                QListWidgetItem* zoneItem = new QListWidgetItem(QString("Zone %1").arg(z));
+                zoneItem->setData(Qt::UserRole, z); // Store zone number as user role
+                ui->subsc_zone_choice->addItem(zoneItem);
+            }
+            ui->subsc_zone_choice->setEnabled(true);
+
+        }
+        else {
+            // Smart Wallet subscription
+            const auto& w = arr_subscription[subIndex].wallet_sub;
+            QString plan = QString("Smart Wallet\nMax Balance: %1 LE\nFund Multiple: %2 LE")
+                .arg(w.card_balance)
+                .arg(w.fund_multiple);
+
+            for (int z = 0; z < 4 && z < 30 && w.zonesPrice[z] > 0; z++) {
+                plan += QString("\nZone %1: %2 LE").arg(z + 1).arg(w.zonesPrice[z]);
+            }
+
+            QListWidgetItem* item = new QListWidgetItem(plan);
+            item->setData(Qt::UserRole, 0);
+            item->setData(Qt::UserRole + 1, "wallet");
+            ui->label_subscription_details->addItem(item);
+
+            // Disable zone list
+            ui->subsc_zone_choice->setEnabled(false);
+            ui->subsc_zone_choice->clear();
+        }
+        });
+
+    // Connect submit button
+    connect(ui->pushButton_11, &QPushButton::clicked, this, [this]() {
+        QListWidgetItem* selectedItem = ui->label_subscription_details->currentItem();
+        if (!selectedItem) {
+            QMessageBox::warning(this, "Selection Required", "Please select a subscription plan.");
+            return;
+        }
+
+        int planIndex = selectedItem->data(Qt::UserRole).toInt();
+        QString planType = selectedItem->data(Qt::UserRole + 1).toString();
+
+        user_subscriptions& userSub = arr_users[indexofuser].sub;
+        int subIndex = chosenSubscriptionIndex;
+
+        userSub.subscription_type = arr_subscription[subIndex].plan_name;
+        userSub.fixed = arr_subscription[subIndex].fixed;
+        userSub.plan_type = planType.toStdString();
+
+        int selectedZone = 0;
+        if (arr_subscription[subIndex].fixed == 'y') {
+            // Only require zone if it's fixed
+            if (!ui->subsc_zone_choice->currentItem()) {
+                QMessageBox::warning(this, "Selection Required", "Please select a zone.");
+                return;
+            }
+            selectedZone = ui->subsc_zone_choice->currentItem()->data(Qt::UserRole).toInt();
+        }
+
+        if (planType == "month") {
+            const auto& m = arr_subscription[subIndex].month_sub[planIndex];
+            userSub.duriation_plan_type = m.duration;
+            userSub.Num_trips = m.no_of_trips;
+            userSub.remaining_trips = m.no_of_trips;
+            userSub.zone = selectedZone;
+            if (selectedZone >= 1 && selectedZone <= 30)
+                userSub.zonePrice = m.zonesPrice[selectedZone - 1];
+        }
+        else if (planType == "year") {
+            const auto& y = arr_subscription[subIndex].year_sub[planIndex];
+            userSub.duriation_plan_type = y.duration;
+            userSub.Num_trips = y.no_of_trips;
+            userSub.remaining_trips = y.no_of_trips;
+            userSub.zone = selectedZone;
+            if (selectedZone >= 1 && selectedZone <= 30)
+                userSub.zonePrice = y.zonesPrice[selectedZone - 1];
+        }
+        else if (planType == "wallet") {
+            const auto& w = arr_subscription[subIndex].wallet_sub;
+            userSub.wallet_name = "Smart Wallet";
+            userSub.zone = w.zone_num;
+            userSub.zonePrice = w.zonesPrice[0];
+
+            // Redirect to wallet page
+            ui->stackedWidget->setCurrentWidget(ui->renew_in_wallet_subsc);
+
+            // Update label with current wallet balance
+            ui->old_wallet_balance->setText(
+                QString("Current Wallet Balance: %1 LE")
+                .arg(arr_users[indexofuser].sub.balancew)
+            );
+
+            ui->wallet_new_balance->clear();
+            ui->wallet_new_balance->setFocus();
+            return;
+        }
+
+        // 🔍 Check if user has enough balance
+        long long requiredBalance = userSub.zonePrice;
+        if (arr_users[indexofuser].balance < requiredBalance) {
+            QMessageBox::warning(this, "Insufficient Balance",
+                "❌ Insufficient balance. Please recharge your account.");
+
+            // Show and connect recharge button
+            ui->recharge_user_balance_in_1st_subsc->setVisible(true);
+            connect(ui->recharge_user_balance_in_1st_subsc, &QPushButton::clicked, this, [=]() {
+                ui->stackedWidget->setCurrentWidget(ui->charge_user_balance_page);
+                please = true;
+                });
+
+            return;
+        }
+
+        // Deduct balance and update subscription
+        arr_users[indexofuser].balance -= requiredBalance;
+
+        // Set activation date
+        time_t now = time(nullptr);
+        tm localTime;
+        localtime_s(&localTime, &now);
+
+        userSub.activation = getCurrentDate();
+
+        if (userSub.fixed == 'y') {
+            if (planType == "month") {
+                localTime.tm_mon += userSub.duriation_plan_type;
+            }
+            else if (planType == "year") {
+                localTime.tm_year += userSub.duriation_plan_type;
+            }
+            mktime(&localTime);
+            userSub.expiry = QString("%1/%2/%3")
+                .arg(localTime.tm_mday)
+                .arg(localTime.tm_mon + 1)
+                .arg(localTime.tm_year + 1900)
+                .toStdString();
+        }
+        else {
+            userSub.expiry = "0";
+        }
+
+        // Success message
+        QMessageBox::information(this, "Success",
+            "✅ Subscription successfully updated!");
+       
+        // Go back to user home
+        ui->recharge_user_balance_in_1st_subsc->setVisible(false);
+        start_up();
+        });
+}
+
+
+void QtWidgetsApplication3::user_handle_wallet_recharge()
+{
+    bool ok;
+    int amount = ui->wallet_new_balance->text().toInt(&ok);
+    if (!ok || amount <= 0) {
+        QMessageBox::warning(this, "Invalid Input", "Please enter a valid positive number.");
+        return;
+    }
+
+    user_subscriptions& userSub = arr_users[indexofuser].sub;
+    const wallet& w = arr_subscription[chosenSubscriptionIndex].wallet_sub;
+
+    int currentWalletBalance = userSub.balancew;
+    int cardBalanceLimit = w.card_balance;
+    int fundMultiple = w.fund_multiple;
+
+    if (amount % fundMultiple != 0) {
+        QMessageBox::warning(this, "Invalid Amount",
+            QString("Amount must be a multiple of %1 LE.").arg(fundMultiple));
+        return;
+    }
+
+    if (currentWalletBalance + amount > cardBalanceLimit) {
+        QMessageBox::warning(this, "Balance Exceeded",
+            QString("Total wallet balance cannot exceed %1 LE.").arg(cardBalanceLimit));
+        return;
+    }
+
+    long long& mainBalance = arr_users[indexofuser].balance;
+    if (mainBalance < amount) {
+        QMessageBox::warning(this, "Insufficient Balance",
+            "❌ Insufficient main balance. Please recharge your account.");
+
+        // Show and connect recharge button
+        ui->recharge_main_bala_in_wallet->setVisible(true);
+        connect(ui->recharge_main_bala_in_wallet, &QPushButton::clicked, this, [=]() {
+            ui->stackedWidget->setCurrentWidget(ui->charge_user_balance_page);
+            please = true;
+            });
+        return;
+    }
+
+    // Recharge successful
+    mainBalance -= amount;
+    userSub.balancew += amount;
+
+    QMessageBox::information(this, "Success",
+        QString("✅ Successfully added %1 LE to your wallet.").arg(amount));
+
+    ui->old_wallet_balance->setText(
+        QString("Current Wallet Balance: %1 LE").arg(userSub.balancew));
+
+    ui->wallet_new_balance->clear();
+    start_up();
+}
 
 
 void  QtWidgetsApplication3::on_sub_settings_clicked() {
@@ -601,6 +811,10 @@ void QtWidgetsApplication3::on_submit_balance_clicked()
     //update balance 
     ui->old_user_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
     ui->cur_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
+    if (please) {
+        choose_sub();
+
+    }
 }
 
 void QtWidgetsApplication3::on_back_from_balance_clicked()
