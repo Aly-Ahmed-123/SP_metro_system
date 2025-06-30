@@ -90,46 +90,6 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //sound end 
     connect(ui->confirm_wallet_balance, &QPushButton::clicked, this, &QtWidgetsApplication3::user_handle_wallet_recharge);
 
@@ -742,6 +702,35 @@ void QtWidgetsApplication3::on_pushButton_16_clicked() {
 void QtWidgetsApplication3::on_pushButton_22_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->allRideHistory);
     //aly ekteb hena el function 
+     
+        ui->stackedWidget->setCurrentWidget(ui->allRideHistory);
+
+        QString output;
+        output += "\n--- Ride History for ADMIN name : " + QString::fromStdString(arr_users[indexofuser].username) + " ---\n";
+        bool found = false;
+        int cntride = 1;
+         
+        for (int i = 0; i < MAX_rides; i++) {
+            if (rides[i].entryStation != "") {
+                output += "\nTrip number " + QString::number(cntride) + "\n";
+                output += " User ID : " + QString::fromStdString((rides[i].id)) + "\n";
+                output += " Entry station : " + QString::fromStdString(rides[i].entryStation) + "\n";
+                output += " Exit station : " + QString::fromStdString(rides[i].ExitStation) + "\n";
+                output += " Fare : " + QString::number(rides[i].RideFare) + "\n";
+                output += " Date of trip : " + rides[i].Date + "\n";
+                output += "____________________________________________________________\n";
+
+                found = true;
+                cntride++;
+            }
+        }
+
+        if (!found) {
+            output += "No rides found.\n";
+        }
+
+        ui->textEdit_allRideHistory->setText(output); // QTextEdit name in admin UI
+    
 }
 
 void QtWidgetsApplication3::on_pushButton_14_clicked() {

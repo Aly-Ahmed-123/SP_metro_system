@@ -28,7 +28,7 @@ public:
     void gotoadmin();
     void setPage(int index);
     void start_up();
-    /*void choose_sub();*/
+    void choose_sub();
    
  
    
@@ -86,7 +86,7 @@ private slots:
     void on_spinBox_zoneNum_valueChanged(int value);
 
     void handleWalletRecharge();
-    void handleWalletRecharge();//imp for admin choose user subsc 
+    //void handleWalletRecharge();//imp for admin choose user subsc 
     void user_handle_wallet_recharge();//imp for subsc in user
     
     //user information change
@@ -105,7 +105,7 @@ private slots:
 
 
 
-
+    void on_back_from_all_ride_hist_clicked();
     //modify but #admin
 
     void on_pushButton_18_clicked();

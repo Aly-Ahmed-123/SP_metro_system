@@ -95,6 +95,12 @@ void QtWidgetsApplication3::gotoadmin() {
 }
 //modify #admin
 
+void QtWidgetsApplication3::on_back_from_all_ride_hist_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->admin);
+
+}
+
 void QtWidgetsApplication3::on_pushButton_18_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->modify_user);
 

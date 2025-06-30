@@ -5,3 +5,5 @@ ID2     Helwan_University.     Saad_Zaghloul.     8     25/06/2025
 ID2     Helwan.     El-Zahraa.     8     27/06/2025
 ID2     Helwan.     El-Ma'sara.     8     27/06/2025
 ID3     Torah_El-Balad.     Helwan.     727     27/06/2025
+ID2     Helwan.     Torah_El-Balad.     729     01/07/2025
+ID2     Helwan.     Hadayek_Helwan.     729     01/07/2025

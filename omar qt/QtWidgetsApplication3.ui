@@ -3518,6 +3518,19 @@ background-position: center;
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QPushButton" name="back_from_all_ride_hist">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>620</y>
+        <width>83</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="sub">
      <widget class="QWidget" name="widget_2" native="true">
@@ -3856,7 +3869,7 @@ border:1px solid white;</string>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QGroupBox" name="groupBox_fixed">
