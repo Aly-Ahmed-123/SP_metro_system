@@ -13,9 +13,11 @@
 #include <QTableWidget>
 #include"choose sub.cpp"
 #include"register.h"
-#include <QUrl>
-#include <QtMultimedia/QMediaPlayer>
-#include <QtMultimedia/QAudioOutput>
+
+/// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
+//#include <QUrl>
+//#include <QtMultimedia/QMediaPlayer>
+//#include <QtMultimedia/QAudioOutput>
 class QtWidgetsApplication3 : public QMainWindow
 {
     Q_OBJECT
@@ -105,8 +107,7 @@ private slots:
     void on_Chargeing_admin_balance_clicked();
     void on_pushButton_24_clicked();
     void on_pushButton_25_clicked();
-    // ? ERror Here
-    //void on_pushButton_16_clicked();
+   
 
   //admin delete station
     void on_delete55_clicked();
@@ -176,17 +177,24 @@ private slots:
     void on_deletesub_clicked();
     void on_backtosub_clicked();
 
-    void playTrainSound();
+    /// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
+
+  /*  void playTrainSound();
     void restartBackgroundMusic();    
-    void onTrainSoundFinished();
+    void onTrainSoundFinished();*/
 
 
 private:
     Ui::MainWindow* ui;  // Use Ui::MainWindow, not Ui::QtWidgetsApplication3
-    QMediaPlayer* backgroundMusic;
+    
+    /// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
+    
+ /*   QMediaPlayer* backgroundMusic;
     QMediaPlayer* trainSound;
     QAudioOutput* audioOutput;
-    QAudioOutput* trainAudioOutput;
+    QAudioOutput* trainAudioOutput;*/
+
+
 signals: 
     void switchToDialog();
 };

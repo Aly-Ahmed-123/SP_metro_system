@@ -79,7 +79,10 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
         handleWalletRecharge();
         });
 
-    backgroundMusic = new QMediaPlayer(this);
+
+    /// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
+
+   /* backgroundMusic = new QMediaPlayer(this);
     audioOutput = new QAudioOutput(this);
     backgroundMusic->setAudioOutput(audioOutput);
 
@@ -111,11 +114,7 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
         });
 
 
-    connect(ui->confirmride, &QPushButton::clicked, this, &QtWidgetsApplication3::playTrainSound);
-
-
-
-
+    connect(ui->confirmride, &QPushButton::clicked, this, &QtWidgetsApplication3::playTrainSound);*/
 
 
 }
@@ -140,33 +139,33 @@ void QtWidgetsApplication3::setPage(int index)
 
 
 
+/// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
 
-
-void QtWidgetsApplication3::playTrainSound()
-{
-
-    if (trainSound->isPlaying()) {
-        trainSound->stop();
-    }
-
-
-    if (backgroundMusic->isPlaying()) {
-        backgroundMusic->stop();
-    }
-
-
-    trainSound->play();
-}
-
-void QtWidgetsApplication3::restartBackgroundMusic()
-{
-    backgroundMusic->play();
-}
-
-void QtWidgetsApplication3::onTrainSoundFinished()
-{
-    backgroundMusic->play();
-}
+//void QtWidgetsApplication3::playTrainSound()
+//{
+//
+//    if (trainSound->isPlaying()) {
+//        trainSound->stop();
+//    }
+//
+//
+//    if (backgroundMusic->isPlaying()) {
+//        backgroundMusic->stop();
+//    }
+//
+//
+//    trainSound->play();
+//}
+//
+//void QtWidgetsApplication3::restartBackgroundMusic()
+//{
+//    backgroundMusic->play();
+//}
+//
+//void QtWidgetsApplication3::onTrainSoundFinished()
+//{
+//    backgroundMusic->play();
+//}
 
 
 
