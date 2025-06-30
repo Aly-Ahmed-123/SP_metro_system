@@ -3128,6 +3128,19 @@ background-position: center;
 </string>
       </property>
      </widget>
+     <widget class="QPushButton" name="back_user">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>510</y>
+        <width>231</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>back to main menu</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="deletestation">
      <widget class="QLabel" name="label_41">

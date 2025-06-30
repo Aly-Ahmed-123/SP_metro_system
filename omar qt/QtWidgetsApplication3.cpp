@@ -1240,6 +1240,11 @@ void QtWidgetsApplication3::on_pushButton_addYear_clicked() {
     ui->tableWidget_year_zonePrices->setRowCount(0);
 }
 
+void QtWidgetsApplication3::on_back_user_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->admin);
+}
+
 
 
 void QtWidgetsApplication3::on_back1_clicked() {
