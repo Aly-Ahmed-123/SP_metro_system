@@ -27,9 +27,20 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     , ui(new Ui::MainWindow)  // Correct link to the UI class generated from the .ui file
 {
     ui->setupUi(this);  // Set up the UI components
-    QPixmap pix("");
-    ui->label_44->setPixmap(pix);              // load full image
-    ui->label_44->setScaledContents(true);     // stretch it to fill QLabel size
+   
+    QPixmap view(":/QtWidgetsApplication3/view.jpg");  // Or use "images/background.jpg" if from file system
+    ui->label_56->setPixmap(view.scaled(ui->label_56->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_56->setScaledContents(true);  // Optional, auto-scales content to label size
+    QPixmap choose(":/QtWidgetsApplication3/choosesub.jpg");  // Or use "images/background.jpg" if from file system
+    ui->label->setPixmap(choose.scaled(ui->label->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label->setScaledContents(true);  // Optional, auto-scales content to label size
+    QPixmap people(":/QtWidgetsApplication3/mom.jpg");  // Or use "images/background.jpg" if from file system
+    ui->label_3->setPixmap(people.scaled(ui->label_3->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_3->setScaledContents(true);  // Optional, auto-scales content to label size
+    
+    QPixmap usersett2(":/QtWidgetsApplication3/usersett.jpg");  // Or use "images/background.jpg" if from file system
+    ui->label_58->setPixmap(usersett2.scaled(ui->label_58->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_58->setScaledContents(true);  // Optional, auto-scales content to label size
 
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
     // Month: zone spinbox controls row count in table
@@ -83,7 +94,7 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
         handleWalletRecharge();
         });
 
-    backgroundMusic = new QMediaPlayer(this);
+    /*backgroundMusic = new QMediaPlayer(this);
     audioOutput = new QAudioOutput(this);
     backgroundMusic->setAudioOutput(audioOutput);
 
@@ -96,11 +107,11 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
         }
         });
 
-    backgroundMusic->play();
+    backgroundMusic->play();*/
 
 
 
-    trainSound = new QMediaPlayer(this);
+    /*trainSound = new QMediaPlayer(this);
     trainAudioOutput = new QAudioOutput(this);
     trainSound->setAudioOutput(trainAudioOutput);
 
@@ -112,10 +123,10 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
         if (status == QMediaPlayer::EndOfMedia) {
             onTrainSoundFinished();
         }
-        });
+        });*/
 
 
-    connect(ui->confirmride, &QPushButton::clicked, this, &QtWidgetsApplication3::playTrainSound);
+    /*connect(ui->confirmride, &QPushButton::clicked, this, &QtWidgetsApplication3::playTrainSound);*/
 
 
 
@@ -146,31 +157,31 @@ void QtWidgetsApplication3::setPage(int index)
 
 
 
-void QtWidgetsApplication3::playTrainSound()
-{
+//void QtWidgetsApplication3::playTrainSound()
+//{
+//
+//    if (trainSound->isPlaying()) {
+//        trainSound->stop();
+//    }
+//
+//
+//    if (backgroundMusic->isPlaying()) {
+//        backgroundMusic->stop();
+//    }
+//
+//
+//    trainSound->play();
+//}
 
-    if (trainSound->isPlaying()) {
-        trainSound->stop();
-    }
+//void QtWidgetsApplication3::restartBackgroundMusic()
+//{
+//    backgroundMusic->play();
+//}
 
-
-    if (backgroundMusic->isPlaying()) {
-        backgroundMusic->stop();
-    }
-
-
-    trainSound->play();
-}
-
-void QtWidgetsApplication3::restartBackgroundMusic()
-{
-    backgroundMusic->play();
-}
-
-void QtWidgetsApplication3::onTrainSoundFinished()
-{
-    backgroundMusic->play();
-}
+//void QtWidgetsApplication3::onTrainSoundFinished()
+//{
+//    backgroundMusic->play();
+//}
 
 
 
