@@ -23,7 +23,7 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>-30</x>
+      <x>90</x>
       <y>-50</y>
       <width>1920</width>
       <height>800</height>
@@ -51,7 +51,7 @@
 background-color: rgb(255, 251, 240);</string>
     </property>
     <property name="currentIndex">
-     <number>19</number>
+     <number>14</number>
     </property>
     <widget class="QWidget" name="subscriptions">
      <widget class="QLabel" name="label_35">
@@ -2792,17 +2792,17 @@ color:#1e1e1e</string>
       <widget class="QPushButton" name="personal_details">
        <property name="geometry">
         <rect>
-         <x>540</x>
-         <y>200</y>
-         <width>251</width>
-         <height>31</height>
+         <x>780</x>
+         <y>220</y>
+         <width>331</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid  rgb(43, 82, 136);
-</string>
+        <string notr="true">border-radius:15px;
+font: 15pt &quot;Segoe UI&quot;;
+border:4px solid  rgb(43, 82, 136);
+color:#1e1e1e</string>
        </property>
        <property name="text">
         <string> For personal details</string>
@@ -2811,17 +2811,17 @@ border:1px solid  rgb(43, 82, 136);
       <widget class="QPushButton" name="rides">
        <property name="geometry">
         <rect>
-         <x>540</x>
-         <y>240</y>
-         <width>251</width>
-         <height>31</height>
+         <x>780</x>
+         <y>280</y>
+         <width>331</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid  rgb(43, 82, 136);
-</string>
+        <string notr="true">border-radius:15px;
+font: 15pt &quot;Segoe UI&quot;;
+border:4px solid  rgb(43, 82, 136);
+color:#1e1e1e</string>
        </property>
        <property name="text">
         <string>For New Ride or Rides History</string>
@@ -2830,17 +2830,17 @@ border:1px solid  rgb(43, 82, 136);
       <widget class="QPushButton" name="sub_settings">
        <property name="geometry">
         <rect>
-         <x>540</x>
-         <y>280</y>
-         <width>251</width>
-         <height>31</height>
+         <x>780</x>
+         <y>340</y>
+         <width>331</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid  rgb(43, 82, 136);
-</string>
+        <string notr="true">border-radius:15px;
+font: 15pt &quot;Segoe UI&quot;;
+border:4px solid  rgb(43, 82, 136);
+color:#1e1e1e</string>
        </property>
        <property name="text">
         <string>For subscriptions settings</string>
@@ -2849,17 +2849,17 @@ border:1px solid  rgb(43, 82, 136);
       <widget class="QPushButton" name="logout">
        <property name="geometry">
         <rect>
-         <x>540</x>
-         <y>320</y>
-         <width>251</width>
-         <height>31</height>
+         <x>780</x>
+         <y>400</y>
+         <width>331</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid  rgb(43, 82, 136);
-</string>
+        <string notr="true">border-radius:15px;
+font: 15pt &quot;Segoe UI&quot;;
+border:4px solid  rgb(43, 82, 136);
+color:#1e1e1e</string>
        </property>
        <property name="text">
         <string>To Logout </string>
@@ -2868,9 +2868,9 @@ border:1px solid  rgb(43, 82, 136);
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>480</x>
-         <y>40</y>
-         <width>281</width>
+         <x>860</x>
+         <y>110</y>
+         <width>181</width>
          <height>61</height>
         </rect>
        </property>
@@ -2886,14 +2886,46 @@ font: 700 30pt &quot;Times New Roman&quot;;</string>
       <widget class="QPushButton" name="exit02">
        <property name="geometry">
         <rect>
-         <x>220</x>
-         <y>310</y>
-         <width>80</width>
-         <height>24</height>
+         <x>780</x>
+         <y>460</y>
+         <width>331</width>
+         <height>41</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:15px;
+font: 15pt &quot;Segoe UI&quot;;
+border:4px solid  rgb(43, 82, 136);
+color:#1e1e1e</string>
        </property>
        <property name="text">
         <string>Exit program</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>1270</x>
+         <y>200</y>
+         <width>361</width>
+         <height>311</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_57">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>130</y>
+         <width>301</width>
+         <height>411</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </widget>

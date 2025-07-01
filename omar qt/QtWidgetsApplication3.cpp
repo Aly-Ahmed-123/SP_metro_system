@@ -41,6 +41,9 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     QPixmap usersett2(":/QtWidgetsApplication3/usersett.jpg");  // Or use "images/background.jpg" if from file system
     ui->label_58->setPixmap(usersett2.scaled(ui->label_58->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     ui->label_58->setScaledContents(true);  // Optional, auto-scales content to label size
+    QPixmap wel(":/QtWidgetsApplication3/welcome.jpg");  // Or use "images/background.jpg" if from file system
+    ui->label_25->setPixmap(wel.scaled(ui->label_25->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_25->setScaledContents(true);  // Optional, auto-scales content to label size
 
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
     // Month: zone spinbox controls row count in table
