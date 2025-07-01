@@ -115,13 +115,13 @@ void Register::on_pushButton_login_clicked()
     bool success = SignInFun(username.toStdString(), password.toStdString(), validpasskey);
 
     if (success && admincheck=="") {
-        QMessageBox::information(this, "Login", "Login Successful");
+        QMessageBox::information(this, "Login", "Login Successfully");
         emit switchToMainWindow();
         
     }
     else if (success && validpasskey)
     {
-        QMessageBox::information(this, "Login", "Login Successful");
+        QMessageBox::information(this, "Login", "Login Successfully");
         emit windowadmin();
        
     }

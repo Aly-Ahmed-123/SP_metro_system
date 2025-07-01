@@ -94,7 +94,43 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
     connect(ui->confirm_wallet_balance, &QPushButton::clicked, this, &QtWidgetsApplication3::user_handle_wallet_recharge);
 
    /* connect(ui->wallet_submit_button, &QPushButton::clicked, this, &QtWidgetsApplication3::user_handle_wallet_recharge);*/
- 
+    //ui->stackedWidget->setCurrentWidget(ui->welcome1_page);
+    QPixmap pix(":/QtWidgetsApplication3/D:/1.jpg");
+    ui->label_55->setPixmap(pix.scaled(ui->label_55->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_55->setScaledContents(true);
+    QPixmap pix1(":/QtWidgetsApplication3/D:/2.jpg");
+    ui->label_57->setPixmap(pix.scaled(ui->label_57->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_57->setScaledContents(true);
+    QPixmap pix2(": / QtWidgetsApplication3 / D : / 4.jpg"); 
+    ui->label_74->setPixmap(pix.scaled(ui->label_74->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_74->setScaledContents(true);  
+    QPixmap pix3(" : / QtWidgetsApplication3 / D : / 5.jpg");
+    ui->label_59->setPixmap(pix.scaled(ui->label_59->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_59->setScaledContents(true);
+    QPixmap pix4(":/QtWidgetsApplication3/D:/6.jpg");
+    ui->label_60->setPixmap(pix.scaled(ui->label_60->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_60->setScaledContents(true);
+    QPixmap pix5(":/QtWidgetsApplication3/D:/7.jpg");
+    ui->label_61->setPixmap(pix.scaled(ui->label_61->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_61->setScaledContents(true);
+    QPixmap pix6(":/QtWidgetsApplication3/D:/8.jpg");
+    ui->label_62->setPixmap(pix.scaled(ui->label_62->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_62->setScaledContents(true);
+    QPixmap pix7(":/QtWidgetsApplication3/D:/6.jpg");
+    ui->label_63->setPixmap(pix.scaled(ui->label_63->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_63->setScaledContents(true);
+    QPixmap pix11(":/QtWidgetsApplication3/D:/9.jpg");
+    ui->label_70->setPixmap(pix.scaled(ui->label_70->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_70->setScaledContents(true);
+    QPixmap pix10(":/QtWidgetsApplication3/D:/10.jpg");
+    ui->label_71->setPixmap(pix.scaled(ui->label_71->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_71->setScaledContents(true);
+    QPixmap pix8(":/QtWidgetsApplication3/D:/11.jpg");
+    ui->label_72->setPixmap(pix.scaled(ui->label_72->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_72->setScaledContents(true);
+    QPixmap pix9(":/QtWidgetsApplication3/D:/12.jpg");
+    ui->label_73->setPixmap(pix.scaled(ui->label_73->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_73->setScaledContents(true);
 }
 
 
@@ -255,6 +291,7 @@ void QtWidgetsApplication3::setPage(int index)
 //{
 //    backgroundMusic->play();
 //}
+
 
 
 
@@ -563,6 +600,14 @@ void QtWidgetsApplication3::on_pushButton_13_clicked()
     ui->stackedWidget_2->setCurrentWidget(ui->page_3);
 }
 
+void QtWidgetsApplication3::on_feedback_clicked()
+{
+    QString feedback = ui->lineEdit_8->text().trimmed();
+    arr_users[indexofuser].complaints = feedback.toStdString();
+    QMessageBox::information(this, "FeedBack", "thank you for sharing your feedback");
+    saveusersinfo();
+    QApplication::quit();
+}
 void QtWidgetsApplication3::on_pushButton_20_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->add_station);
@@ -1375,5 +1420,8 @@ void QtWidgetsApplication3::on_logout_clicked() {
     emit switchToDialog();
 }
 
-
+void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->admin);
+}
 

@@ -183,7 +183,8 @@ private slots:
     void refreshSubscriptionTable();
     void on_deletesub_clicked();
     void on_backtosub_clicked();
-
+    void on_admin_mainmenu_clicked();
+    void on_feedback_clicked();
     /// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
 
   /*  void playTrainSound();
