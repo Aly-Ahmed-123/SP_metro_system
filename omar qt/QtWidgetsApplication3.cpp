@@ -29,21 +29,21 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     ui->setupUi(this);  // Set up the UI components
    
     QPixmap view(":/QtWidgetsApplication3/view.jpg");  // Or use "images/background.jpg" if from file system
-    ui->label_56->setPixmap(view.scaled(ui->label_56->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
-    ui->label_56->setScaledContents(true);  // Optional, auto-scales content to label size
+    ui->label_89->setPixmap(view.scaled(ui->label_89->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_89->setScaledContents(true);  // Optional, auto-scales content to label size
     QPixmap choose(":/QtWidgetsApplication3/choosesub.jpg");  // Or use "images/background.jpg" if from file system
-    ui->label->setPixmap(choose.scaled(ui->label->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
-    ui->label->setScaledContents(true);  // Optional, auto-scales content to label size
+    ui->label_84->setPixmap(choose.scaled(ui->label_84->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_84->setScaledContents(true);  // Optional, auto-scales content to label size
     QPixmap people(":/QtWidgetsApplication3/mom.jpg");  // Or use "images/background.jpg" if from file system
-    ui->label_3->setPixmap(people.scaled(ui->label_3->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
-    ui->label_3->setScaledContents(true);  // Optional, auto-scales content to label size
+    ui->label_82->setPixmap(people.scaled(ui->label_82->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_82->setScaledContents(true);  // Optional, auto-scales content to label size
     
     QPixmap usersett2(":/QtWidgetsApplication3/usersett.jpg");  // Or use "images/background.jpg" if from file system
     ui->label_58->setPixmap(usersett2.scaled(ui->label_58->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     ui->label_58->setScaledContents(true);  // Optional, auto-scales content to label size
     QPixmap wel(":/QtWidgetsApplication3/welcome.jpg");  // Or use "images/background.jpg" if from file system
-    ui->label_25->setPixmap(wel.scaled(ui->label_25->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
-    ui->label_25->setScaledContents(true);  // Optional, auto-scales content to label size
+    ui->label_88->setPixmap(wel.scaled(ui->label_88->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_88->setScaledContents(true);  // Optional, auto-scales content to label size
 
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
     // Month: zone spinbox controls row count in table
@@ -104,8 +104,8 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
    
 
     
+    //backgroundMusic->play();*/
 
-    backgroundMusic->play();*/
 
 
 

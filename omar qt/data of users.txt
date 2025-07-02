@@ -3,3 +3,4 @@ information of person is in this sequence:(name --> id --> role --> balance --> 
 
 omar ID1 0 50 12345678 omar@gmail.com
 alol ID2 0 10 123456789 aly@gmail.com
+nn ID3 0 0  
