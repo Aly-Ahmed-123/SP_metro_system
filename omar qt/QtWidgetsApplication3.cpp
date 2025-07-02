@@ -44,7 +44,27 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     QPixmap wel(":/QtWidgetsApplication3/welcome.jpg");  // Or use "images/background.jpg" if from file system
     ui->label_88->setPixmap(wel.scaled(ui->label_88->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     ui->label_88->setScaledContents(true);  // Optional, auto-scales content to label size
-
+    QPixmap charg(":/QtWidgetsApplication3/balance.jpg");  // Or use "images/background.jpg" if from file system
+    ui->label_90->setPixmap(charg.scaled(ui->label_90->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_90->setScaledContents(true);  // Optional, auto-scales content to label size
+    QPixmap end(":/QtWidgetsApplication3/rating.jpg");  // Or use "images/background.jpg" if from file system
+    ui->label_73->setPixmap(end.scaled(ui->label_73->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_73->setScaledContents(true);  // Optional, auto-scales content to label size
+    QPixmap time(":/QtWidgetsApplication3/time.jpg");  // Or use "images/background.jpg" if from file system
+    ui->label_91->setPixmap(time.scaled(ui->label_91->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_91->setScaledContents(true);  // Optional, auto-scales content to label size
+    QPixmap rides1(":/QtWidgetsApplication3/rides.jpg");  // Or use "images/background.jpg" if from file system
+    ui->label_82->setPixmap(rides1.scaled(ui->label_82->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_82->setPixmap(rides1.scaled(ui->label_82->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_82->setScaledContents(true);  // Optional, auto-scales content to label size
+   
+        QPixmap met(":/QtWidgetsApplication3/20240509_CairoMetroMap.png");  // Or use "images/background.jpg" if from file system
+    ui->label_3->setPixmap(met.scaled(ui->label_3->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_3->setScaledContents(true);  // Optional, auto-scales content to label size
+    ui->stackedWidget->setCurrentWidget(ui->welcome2);
+    QPixmap ride(":/QtWidgetsApplication3/rides.jpg");  // Or use "images/background.jpg" if from file system
+    ui->label_92->setPixmap(ride.scaled(ui->label_92->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_92->setScaledContents(true);  // Optional, auto-scales content to label size
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
     // Month: zone spinbox controls row count in table
 connect(ui->spinBox_month_zones, QOverload<int>::of(&QSpinBox::valueChanged),
