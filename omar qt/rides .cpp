@@ -73,47 +73,8 @@ void QtWidgetsApplication3::on_pushButton_7_clicked() {
 
 
 
-    //IMP IMP IMP IMP IMP DONT DELETE 
-    //void QtWidgetsApplication3::on_pushButton_AdminRideHistory_clicked() {
-    //    ui->stackedWidget->setCurrentWidget(ui->admin_rides_history);
 
-    //    QString output;
-    //    output += "\n--- Ride History for ADMIN name : " + QString::fromStdString(arr_users[indexofuser].username) + " ---\n";
-    //    bool found = false;
-    //    int cntride = 1;
-
-    //    for (int i = 0; i < MAX_rides; i++) {
-    //        if (rides[i].entryStation != "") {
-    //            output += "\nTrip number " + QString::number(cntride) + "\n";
-    //            output += " User ID : " + QString::number(rides[i].id) + "\n";
-    //            output += " Entry station : " + QString::fromStdString(rides[i].entryStation) + "\n";
-    //            output += " Exit station : " + QString::fromStdString(rides[i].ExitStation) + "\n";
-    //            output += " Fare : " + QString::number(rides[i].RideFare) + "\n";
-    //            output += " Date of trip : " + rides[i].Date + "\n";
-    //            output += "____________________________________________________________\n";
-
-    //            found = true;
-    //            cntride++;
-    //        }
-    //    }
-
-    //    if (!found) {
-    //        output += "No rides found.\n";
-    //    }
-
-    //    ui->textEdit_AdminRideHistory->setText(output); // QTextEdit name in admin UI
-    //}
-
-
-
-
-
-
-
-
-
-
-
+    //done it you can delet the commit not the func 
 
 }
 
@@ -161,25 +122,26 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
                     ride_cnt++;
 
                     QMessageBox::information(this, "Success", "Trip recorded successfully!");
-
+                    start_up();
                 }
 
 
-                // will fix this when we put subscreption or with haya 
-                //else { 
-                //    QMessageBox msgBox;
-                //    msgBox.setText("Your wallet balance is low, please charge it.");
-                //    msgBox.setInformativeText("To renew press 'Yes'. To choose another station press 'No'.");
-                //    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-                //    int ret = msgBox.exec();
+                
+                else { 
+                  
+                    QMessageBox msgBox;
+                    msgBox.setText("Your wallet balance is low, please charge it.");
+                    msgBox.setInformativeText("To renew press 'Yes'. To choose another station press 'No'.");
+                    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+                    int ret = msgBox.exec();
 
-                //    if (ret == QMessageBox::Yes) {
-                //       /* renew_time(arr_users[indexofuser].sub);*/
-                //    }
-                //    else {
-                //        return;
-                //    }
-                //}
+                    if (ret == QMessageBox::Yes) {
+                        ui->stackedWidget->setCurrentWidget(ui->renew_in_wallet_subsc);
+                    }
+                    else {
+                        return;
+                    }
+                }
             }
         }
     }
@@ -201,10 +163,18 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
                 ride_cnt++;
 
                 QMessageBox::information(this, "Success", "Trip recorded successfully!");
+                start_up();
 
             }
+          
+            
+
             //also will fix this with haya 
-            /*else {
+            else {
+                ui->cur_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
+                ui->rem_trips->setText(QString::fromStdString(to_string(arr_users[indexofuser].sub.remaining_trips)));
+
+
                 QMessageBox msgBox;
                 msgBox.setText("You have reached the maximum number of trips.");
                 msgBox.setInformativeText("Renew subscription? Press Yes. Main menu? Press No.");
@@ -212,12 +182,13 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
                 int ret = msgBox.exec();
 
                 if (ret == QMessageBox::Yes) {
-                    renew_time(arr_users[indexofuser].sub);
+
+                    ui->stackedWidget->setCurrentWidget(ui->renew_page);
                 }
                 else {
                     return;
                 }
-            }*/
+            }
         }
         else {
             QMessageBox::warning(this, "Zone Error", "You didn't subscribe to this zone. Try another one.");

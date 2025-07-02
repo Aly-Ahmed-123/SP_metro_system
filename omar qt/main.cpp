@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
         x.hide();
         w.show();
         w.setPage(0);
-        //w.choose_sub();
+       /* w.choose_sub();*/
 
         });
 
@@ -56,6 +56,7 @@ int main(int argc, char* argv[])
         save_subsc_data();
         save_user_subsc();
         save_rides_to_file();
+        stations2file();
         });
 
     x.show();

@@ -13,7 +13,9 @@
 #include <QTableWidget>
 #include"choose sub.cpp"
 #include"register.h"
-#include <QUrl>
+
+/// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
+//#include <QUrl>
 //#include <QtMultimedia/QMediaPlayer>
 //#include <QtMultimedia/QAudioOutput>
 class QtWidgetsApplication3 : public QMainWindow
@@ -26,10 +28,10 @@ public:
     void gotoadmin();
     void setPage(int index);
     void start_up();
-   // void choose_sub();
+    void choose_sub();
    
-    int numStationsInLine[3];
-    Station allStations[3][MAX_STATIONS_PER_LINE];
+ 
+   
 
 private slots:
    /* void on_pushButton_23_clicked();*/
@@ -45,12 +47,16 @@ private slots:
     void on_pushButton_9_clicked();
     void on_pushButton_10_clicked();
     void on_pushButton_15_clicked();
+    void on_back_user_clicked();
+    void on_NewStation_clicked();
+    void on_mohamed_back_clicked();
     //void on_pushButton_17_clicked();
     void on_delete_users_clicked();
     void on_change_users_clicked();
     
     void on_confirmride_clicked();
     void on_pushButton_16_clicked();
+    void on_pushButton_20_clicked();
     void on_pushButton_22_clicked();
     void handleMonthlyCellClick(int r, int);
     void handleYearlyCellClick(int r, int);
@@ -81,6 +87,9 @@ private slots:
     void on_spinBox_zoneNum_valueChanged(int value);
 
     void handleWalletRecharge();
+    //void handleWalletRecharge();//imp for admin choose user subsc 
+    void user_handle_wallet_recharge();//imp for subsc in user
+    
     //user information change
 
     void on_TOEDIT_clicked();
@@ -97,7 +106,7 @@ private slots:
 
 
 
-
+    void on_back_from_all_ride_hist_clicked();
     //modify but #admin
 
     void on_pushButton_18_clicked();
@@ -105,8 +114,7 @@ private slots:
     void on_Chargeing_admin_balance_clicked();
     void on_pushButton_24_clicked();
     void on_pushButton_25_clicked();
-    // ? ERror Here
-    //void on_pushButton_16_clicked();
+   
 
   //admin delete station
     void on_delete55_clicked();
@@ -175,14 +183,28 @@ private slots:
     void refreshSubscriptionTable();
     void on_deletesub_clicked();
     void on_backtosub_clicked();
+    void on_admin_mainmenu_clicked();
+    void on_feedback_clicked();
+    /// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
 
-    /*void playTrainSound();
+  /*  void playTrainSound();
     void restartBackgroundMusic();    
     void onTrainSoundFinished();*/
 
 
 private:
-    Ui::MainWindow* ui;  
+    Ui::MainWindow* ui;  // Use Ui::MainWindow, not Ui::QtWidgetsApplication3
+    bool isChoosingSubscriptionAfterRecharge; // Add this
+    int savedSubscriptionIndex;               // Optional: save last selected subsc index
+    
+    /// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
+    
+ /*   QMediaPlayer* backgroundMusic;
+    QMediaPlayer* trainSound;
+    QAudioOutput* audioOutput;
+    QAudioOutput* trainAudioOutput;*/
+
+
 signals: 
     void switchToDialog();
 };

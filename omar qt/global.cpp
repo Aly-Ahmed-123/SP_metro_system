@@ -17,13 +17,14 @@ int chosenSubscriptionIndex = -1;
 short indexofuser = 0;
 short number_of_users_in_array = 0;
 short hist_rides = 0;
-
+int numStationsInLine[3] = {0};
 // Boolean flags
 bool DesireToCreateAcc = true;
 bool sign = false;
 bool realadmin_by_keypass = false;
 bool why=false;
 bool why_grater=false;
+bool please = false;
 // User session strings
 string name = "";
 string password = "";

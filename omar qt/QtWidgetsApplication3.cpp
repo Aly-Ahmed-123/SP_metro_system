@@ -74,9 +74,13 @@ connect(ui->radioButton_wallet, &QRadioButton::clicked,
 connect(ui->tableWidget_monthly, &QTableWidget::cellClicked, this, &QtWidgetsApplication3::handleMonthlyCellClick);
 connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsApplication3::handleYearlyCellClick);
 
+
+
+
     ui->user_input_balance->setMaximum(10000.0);  // or whatever max you want
     ui->user_input_balance->setRange(0.0, 10000.0);     // sets both min and max
-    ui->user_input_balance->setSingleStep(0.5);       // how much it increases/decreases per step
+    ui->user_input_balance->setSingleStep(0.5);    
+    // how much it increases/decreases per step
     connect(ui->admin_rech_balance_in_subsc, &QPushButton::clicked, this, [=]() {
         // Navigate to charge balance page
         ui->stackedWidget->setCurrentWidget(ui->charge_balance);
@@ -96,50 +100,171 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
         // Call handleWalletRecharge to process the recharge
         handleWalletRecharge();
         });
+    //sound begin 
+   
 
-    /*backgroundMusic = new QMediaPlayer(this);
-    audioOutput = new QAudioOutput(this);
-    backgroundMusic->setAudioOutput(audioOutput);
-
-    backgroundMusic->setSource(QUrl::fromLocalFile("metro_music.mp3"));
-    audioOutput->setVolume(0.9f);
-
-    connect(backgroundMusic, &QMediaPlayer::mediaStatusChanged, this, [this](QMediaPlayer::MediaStatus status) {
-        if (status == QMediaPlayer::EndOfMedia) {
-            backgroundMusic->play();
-        }
-        });
+    
 
     backgroundMusic->play();*/
 
 
 
-    /*trainSound = new QMediaPlayer(this);
-    trainAudioOutput = new QAudioOutput(this);
-    trainSound->setAudioOutput(trainAudioOutput);
+    //sound end 
+    connect(ui->confirm_wallet_balance, &QPushButton::clicked, this, &QtWidgetsApplication3::user_handle_wallet_recharge);
 
-    trainSound->setSource(QUrl::fromLocalFile("metro_move.mp3"));
-    trainAudioOutput->setVolume(1.0f);
-
-
-    connect(trainSound, &QMediaPlayer::mediaStatusChanged, this, [this](QMediaPlayer::MediaStatus status) {
-        if (status == QMediaPlayer::EndOfMedia) {
-            onTrainSoundFinished();
-        }
-        });*/
-
-
-    /*connect(ui->confirmride, &QPushButton::clicked, this, &QtWidgetsApplication3::playTrainSound);*/
-
-
-
-
-
-
+   /* connect(ui->wallet_submit_button, &QPushButton::clicked, this, &QtWidgetsApplication3::user_handle_wallet_recharge);*/
+    //ui->stackedWidget->setCurrentWidget(ui->welcome1_page);
+    QPixmap pix(":/QtWidgetsApplication3/1.jpg");
+    ui->label_55->setPixmap(pix.scaled(ui->label_55->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_55->setScaledContents(true);
+    QPixmap pix1(":/QtWidgetsApplication3/2.jpg");
+    ui->label_57->setPixmap(pix.scaled(ui->label_57->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_57->setScaledContents(true);
+    QPixmap pix2(": / QtWidgetsApplication3/ 4.jpg"); 
+    ui->label_74->setPixmap(pix.scaled(ui->label_74->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_74->setScaledContents(true);  
+    QPixmap pix3(" : / QtWidgetsApplication3/ 5.jpg");
+    ui->label_59->setPixmap(pix.scaled(ui->label_59->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_59->setScaledContents(true);
+    QPixmap pix4(":/QtWidgetsApplication3/6.jpg");
+    ui->label_60->setPixmap(pix.scaled(ui->label_60->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_60->setScaledContents(true);
+    QPixmap pix5(":/QtWidgetsApplication3/7.jpg");
+    ui->label_61->setPixmap(pix.scaled(ui->label_61->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_61->setScaledContents(true);
+    QPixmap pix6(":/QtWidgetsApplication3/8.jpg");
+    ui->label_62->setPixmap(pix.scaled(ui->label_62->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_62->setScaledContents(true);
+    QPixmap pix7(":/QtWidgetsApplication3/6.jpg");
+    ui->label_63->setPixmap(pix.scaled(ui->label_63->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_63->setScaledContents(true);
+    QPixmap pix11(":/QtWidgetsApplication3/9.jpg");
+    ui->label_70->setPixmap(pix.scaled(ui->label_70->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_70->setScaledContents(true);
+    QPixmap pix10(":/QtWidgetsApplication3/10.jpg");
+    ui->label_71->setPixmap(pix.scaled(ui->label_71->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_71->setScaledContents(true);
+    QPixmap pix8(":/QtWidgetsApplication3/11.jpg");
+    ui->label_72->setPixmap(pix.scaled(ui->label_72->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_72->setScaledContents(true);
+    QPixmap pix9(":/QtWidgetsApplication3/12.jpg");
+    ui->label_73->setPixmap(pix.scaled(ui->label_73->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_73->setScaledContents(true);
 }
 
 
-  
+void  QtWidgetsApplication3::on_NewStation_clicked()
+{
+    int num_of_station_line1 = 0, num_of_station_line2 = 0, num_of_station_line3 = 0;
+
+    for (int i = 0; i < MAX_STATIONS_PER_LINE;i++)
+    {
+        for (int j = 0;j < NUM_LINES;j++)
+        {
+            if (NUM_LINES == 0 && allStations[i][j].name != "-")
+            {
+                num_of_station_line1++;
+            }
+            else if (NUM_LINES == 1 && allStations[i][j].name != "-")
+            {
+                num_of_station_line2++;
+            }
+            else if (NUM_LINES == 2 && allStations[i][j].name != "-")
+            {
+                num_of_station_line3++;
+            }
+
+        }
+
+    }
+
+    QString stationname = ui->StationName->text().trimmed();
+    QString station_line = ui->stationLine->text().trimmed();
+    QString stationnumber = ui->StationNumber->text().trimmed();
+
+    bool ok1, ok2;
+    int line = station_line.toInt(&ok1);
+    int number = stationnumber.toInt(&ok2);
+
+    for (int i = 0; i < MAX_STATIONS_PER_LINE;i++)
+    {
+        for (int j = 0;j < NUM_LINES;j++)
+        {
+            if (stationname.toStdString() == allStations[i][j].name)
+            {
+                QMessageBox::information(this, "name", "there is already a station with this name");
+                return;
+            }
+        }
+    }
+
+    if (!ok1 || station_line.toStdString() < "1" || station_line.toStdString() > "3")
+    {
+        QMessageBox::information(this, "line number", "this line does not exist choose line (1 --> 3)");
+        return;
+    }
+
+    if (!ok2 || stationnumber.toStdString() <= "0" || stationnumber.toStdString() > "40")
+    {
+        QMessageBox::information(this, "station number", "this number does not exist choose number (1 --> 40)");
+        return;
+    }
+    line--; number--;
+
+    if ((line == 0 && number < num_of_station_line1) || (line == 1 && number < num_of_station_line2) || (line == 2 && number < num_of_station_line3))
+    {
+        for (int i = 38; i >= number; --i) {
+            allStations[i + 1][line] = allStations[i][line];
+            if (allStations[i + 1][line].name != "-" && allStations[i + 1][line].name != "") {
+                allStations[i + 1][line].number += 1;
+            }
+        }
+        allStations[number][line].name = stationname.toStdString();
+        allStations[number][line].line = line + 1;
+
+        if (line == 0)
+        {
+            allStations[number][line].number = number+1;
+        }
+        else if (line == 1)
+        {
+            allStations[number][line].number = 41 + number;
+        }
+        else if (line == 2)
+        {
+            allStations[number][line].number = 81 + number;
+        }
+    }
+
+    else
+    {
+        allStations[number][line].name = stationname.toStdString();
+        allStations[number][line].line = line + 1;
+
+        if (line == 0)
+        {
+            allStations[number][line].number = num_of_station_line1;
+        }
+        else if (line == 1)
+        {
+            allStations[number][line].number = 40+num_of_station_line2;
+        }
+        else if (line == 2)
+        {
+            allStations[number][line].number = 80+num_of_station_line3;
+        }
+    }
+
+    QMessageBox::information(this, "adding station", "you added a new station successfully");
+
+    buildGraph();
+
+}
+
+void  QtWidgetsApplication3::on_mohamed_back_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->ride_settings);
+}
 
 
 QtWidgetsApplication3::~QtWidgetsApplication3()
@@ -158,7 +283,7 @@ void QtWidgetsApplication3::setPage(int index)
 
 
 
-
+/// LAW AYZEEN ELSOUND FE EL PROJECT RAGA3 EL COMMENT LL HAYAH
 
 //void QtWidgetsApplication3::playTrainSound()
 //{
@@ -175,8 +300,13 @@ void QtWidgetsApplication3::setPage(int index)
 //
 //    trainSound->play();
 //}
-
+//
 //void QtWidgetsApplication3::restartBackgroundMusic()
+//{
+//    backgroundMusic->play();
+//}
+//
+//void QtWidgetsApplication3::onTrainSoundFinished()
 //{
 //    backgroundMusic->play();
 //}
@@ -493,6 +623,19 @@ void QtWidgetsApplication3::on_pushButton_13_clicked()
     ui->stackedWidget_2->setCurrentWidget(ui->page_3);
 }
 
+void QtWidgetsApplication3::on_feedback_clicked()
+{
+    QString feedback = ui->lineEdit_8->text().trimmed();
+    arr_users[indexofuser].complaints = feedback.toStdString();
+    QMessageBox::information(this, "FeedBack", "thank you for sharing your feedback");
+    saveusersinfo();
+    QApplication::quit();
+}
+void QtWidgetsApplication3::on_pushButton_20_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->add_station);
+}
+
 void QtWidgetsApplication3::on_spinBox_year_zones_valueChanged(int value)
 {
     ui->tableWidget_year_zonePrices->clearContents();
@@ -586,7 +729,6 @@ void QtWidgetsApplication3::on_pushButton_submit_clicked()
 }
 
 
-
 // DOOOONT PUT RECHARGE HERE OR SUBMIT BALANCE 
 //DONT DO THAT I WILL KILL YOU 
 //THEY ARE IN SUBSCRBITION .CPP  DONT PUT IT HERE 
@@ -620,6 +762,7 @@ void QtWidgetsApplication3::start_up(){
 //I 
 
 
+
 void QtWidgetsApplication3::on_pushButton_16_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->ride_settings);
 }
@@ -627,6 +770,35 @@ void QtWidgetsApplication3::on_pushButton_16_clicked() {
 void QtWidgetsApplication3::on_pushButton_22_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->allRideHistory);
     //aly ekteb hena el function 
+     
+        ui->stackedWidget->setCurrentWidget(ui->allRideHistory);
+
+        QString output;
+        output += "\n--- Ride History for ADMIN name : " + QString::fromStdString(arr_users[indexofuser].username) + " ---\n";
+        bool found = false;
+        int cntride = 1;
+         
+        for (int i = 0; i < MAX_rides; i++) {
+            if (rides[i].entryStation != "") {
+                output += "\nTrip number " + QString::number(cntride) + "\n";
+                output += " User ID : " + QString::fromStdString((rides[i].id)) + "\n";
+                output += " Entry station : " + QString::fromStdString(rides[i].entryStation) + "\n";
+                output += " Exit station : " + QString::fromStdString(rides[i].ExitStation) + "\n";
+                output += " Fare : " + QString::number(rides[i].RideFare) + "\n";
+                output += " Date of trip : " + rides[i].Date + "\n";
+                output += "____________________________________________________________\n";
+
+                found = true;
+                cntride++;
+            }
+        }
+
+        if (!found) {
+            output += "No rides found.\n";
+        }
+
+        ui->textEdit_allRideHistory->setText(output); // QTextEdit name in admin UI
+    
 }
 
 void QtWidgetsApplication3::on_pushButton_14_clicked() {
@@ -1179,6 +1351,11 @@ void QtWidgetsApplication3::on_pushButton_addYear_clicked() {
     ui->tableWidget_year_zonePrices->setRowCount(0);
 }
 
+void QtWidgetsApplication3::on_back_user_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->admin);
+}
+
 
 
 void QtWidgetsApplication3::on_back1_clicked() {
@@ -1207,9 +1384,9 @@ void QtWidgetsApplication3::on_back8_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
 }
 
-void QtWidgetsApplication3::on_back12_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->current_data);
-}
+//void QtWidgetsApplication3::on_back12_clicked() {
+//    ui->stackedWidget->setCurrentWidget(ui->current_data);
+//}
 void QtWidgetsApplication3::on_back9_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->subscription_settings);
 }
@@ -1218,6 +1395,10 @@ void QtWidgetsApplication3::on_back10_clicked() {
 }
 void QtWidgetsApplication3::on_back11_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->subscription_settings);
+}
+void QtWidgetsApplication3::on_back12_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->welcome2);
 }
 void QtWidgetsApplication3::on_backtosub_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->admin);
@@ -1262,5 +1443,8 @@ void QtWidgetsApplication3::on_logout_clicked() {
     emit switchToDialog();
 }
 
-
+void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->admin);
+}
 

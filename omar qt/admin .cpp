@@ -95,11 +95,14 @@ void QtWidgetsApplication3::gotoadmin() {
 }
 //modify #admin
 
+void QtWidgetsApplication3::on_back_from_all_ride_hist_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->admin);
+
+}
+
 void QtWidgetsApplication3::on_pushButton_18_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->modify_user);
-
-
-
 
 }
 
@@ -505,7 +508,7 @@ void QtWidgetsApplication3::on_pushButton_26_clicked()
     num_stations--;
     buildGraph();
 
-    saveStationsToFile(); // ✅ دي أهم خطوة
+    stations2file(); // ✅ دي أهم خطوة
 
     QMessageBox::information(this, "Done", "Station deleted successfully.");
 }
@@ -575,31 +578,29 @@ void QtWidgetsApplication3::write_stations()
 
 void QtWidgetsApplication3::read_stations()
 {
-    std::ifstream file("stations.txt");
-    if (!file.is_open()) {
+    std::ifstream input_stations("stations.txt");
+
+    if (!input_stations.is_open()) {
         QMessageBox::warning(this, "Error", "Could not open stations.txt for reading!");
         return;
     }
 
-    // صفّر العدادات
-    for (int line = 0; line < 3; ++line) {
-        numStationsInLine[line] = 0;
+    input_stations.ignore(1000, '\n');
+
+    for (int i = 0; i < MAX_STATIONS_PER_LINE; i++) {
+        for (int j = 0; j < NUM_LINES; j++) {
+            input_stations >> allStations[i][j].name;
+            if (allStations[i][j].name != "-" || allStations[i][j].name != "Switching.") {
+                num_stations++;
+            }
+            allStations[i][j].number = (j * MAX_STATIONS_PER_LINE) + (i + 1);
+            allStations[i][j].line = j + 1;
+        }
     }
 
-    std::string name;
-    int lineNumber;
+    input_stations.close();
 
-    while (file >> name >> lineNumber) {
-        int lineIndex = lineNumber - 1; // لأن index بيبدأ من صفر
-        int stationIndex = numStationsInLine[lineIndex];
-
-        allStations[lineIndex][stationIndex].name = name;
-        allStations[lineIndex][stationIndex].number = lineNumber;
-
-        numStationsInLine[lineIndex]++;
-    }
-
-    file.close();
+    input_stations.close();
 }
 
 

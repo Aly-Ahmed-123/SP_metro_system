@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>28</number>
+     <number>26</number>
     </property>
     <widget class="QWidget" name="welcome2_3">
      <widget class="QWidget" name="welcome2" native="true">
@@ -702,7 +702,7 @@ font: 700 30pt &quot;Times New Roman&quot;;</string>
         <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
        </property>
        <property name="currentIndex">
-        <number>2</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="page_edit_fixed">
         <widget class="QLabel" name="label_plan_name_fixed">
