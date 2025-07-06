@@ -18,7 +18,7 @@ void  QtWidgetsApplication3::on_pushButton_15_clicked() {
     ui->tableWidget_users->setHorizontalHeaderLabels(headers);
 
     int row = 0;
-    for (int i = 0; i < number_of_users_in_array; ++i) {
+    for (int i =0; i < number_of_users_in_array; ++i) {
         if (arr_users[i].admin_role == 0) {
             ui->tableWidget_users->insertRow(row);
 
@@ -53,7 +53,7 @@ void  QtWidgetsApplication3::on_delete_users_clicked()
         QMessageBox::warning(this, "Invalid Input", "Please enter a valid number.");
         return;
     }
-    admin_chosen_index--;
+   
 
   
 
@@ -65,6 +65,7 @@ void  QtWidgetsApplication3::on_delete_users_clicked()
 
     // Show success message
     QMessageBox::information(this, "Deleted", "User has been deleted successfully.");
+    ui->stackedWidget->setCurrentWidget(ui->admin);
 }
 
 //THIS IS THE CORRECT FUNCTION DONT CHANGE IT 
@@ -80,13 +81,19 @@ void  QtWidgetsApplication3::on_change_users_clicked()
         QMessageBox::warning(this, "Invalid Input", "Please enter a valid number.");
         return;
     }
-    admin_chosen_index--;
+
 
     admin_chosen_user = admin_chosen_index;
 
 
    ui->stackedWidget->setCurrentWidget(ui->modify_user);//DONT GHANGE IT I WILL KILL YOU 
    //DONT CHANGE IT IMP IMP IMP IMP IMP IMP IMP IMP IMP 
+}
+
+void QtWidgetsApplication3::on_back_ride_admin_jist_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->admin);
+
 }
 
 

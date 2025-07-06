@@ -53,7 +53,7 @@ private slots:
     //void on_pushButton_17_clicked();
     void on_delete_users_clicked();
     void on_change_users_clicked();
-    
+    void on_back_ride_admin_jist_clicked();
     void on_confirmride_clicked();
     void on_pushButton_16_clicked();
     void on_pushButton_20_clicked();

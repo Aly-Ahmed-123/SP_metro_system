@@ -410,7 +410,6 @@ void QtWidgetsApplication3::on_confirm_renew_clicked()
         ui->stackedWidget->setCurrentWidget(ui->renew_in_wallet_subsc);
         ui->old_wallet_balance->setText(QString::number(arr_users[indexofuser].sub.balancew));
 
-
     }
 
     if (arr_users[indexofuser].sub.fixed == 'y') {
