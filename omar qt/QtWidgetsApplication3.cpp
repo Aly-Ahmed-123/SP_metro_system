@@ -20,6 +20,14 @@ int year_index = 0;
 //PLEASE DONT DO THAT IF YOU DO THAT I WILL KILL YOU 
 
 //IF YOU PUT IT IT WILL BE A BIG MISTAKE
+ 
+
+
+
+
+//the final code 
+
+
 
 
 QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
