@@ -1,6 +1,6 @@
 line 1  				line 2  					line 3
 
-Helwan.             	El-Monib.           	Adly_Mansour.       	
+Helwan.             	El-Monib.           	-                   	
 Ain_Helwan.         	Sakiat_Mekki.       	El-Haykestep.       	
 Helwan_University.  	Omm_El-Misryeen.    	Omar_Ibn_El-Khattab.	
 Wadi_Hof.           	Giza.               	Qobaa.              	
@@ -39,4 +39,4 @@ New_El-Marg.        	-                   	Cairo_University.
 -                   	-                   	-                   	
 -                   	-                   	-                   	
 -                   	-                   	-                   	
--                   	-                   	-                   	
+-                   	admin               	-                   	
