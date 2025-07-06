@@ -1451,6 +1451,7 @@ void QtWidgetsApplication3::on_exit5_clicked() {
 void QtWidgetsApplication3::on_exit6_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
 }
+
 void QtWidgetsApplication3::on_exit7_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
 }
@@ -1461,6 +1462,11 @@ void QtWidgetsApplication3::on_exit8_clicked() {
 
 void QtWidgetsApplication3::on_logout_clicked() {
     emit switchToDialog();
+}
+
+void QtWidgetsApplication3::on_pushButton_29_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->welcome2);
 }
 
 void  QtWidgetsApplication3::on_admin_mainmenu_clicked()

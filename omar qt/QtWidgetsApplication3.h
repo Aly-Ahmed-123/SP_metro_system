@@ -155,7 +155,7 @@ private slots:
     void on_exit8_clicked();
     void on_pushButton_confirm_clicked();
     void on_logout_clicked();
-   
+    void on_pushButton_29_clicked();
     string getCurrentDate();
     string saveExpiry();
     void on_change_sub_clicked();

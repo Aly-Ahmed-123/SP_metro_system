@@ -45,7 +45,7 @@ font: 9pt &quot;Roman&quot;;
 background-color: rgb(255, 251, 240);</string>
     </property>
     <property name="currentIndex">
-     <number>14</number>
+     <number>8</number>
     </property>
     <widget class="QWidget" name="subscriptions">
      <widget class="QLabel" name="label_35">
@@ -1636,7 +1636,7 @@ color:#1e1e1e</string>
         <family>Times New Roman</family>
         <pointsize>50</pointsize>
         <italic>false</italic>
-   
+        <fontweight></fontweight>
        </font>
       </property>
       <property name="styleSheet">

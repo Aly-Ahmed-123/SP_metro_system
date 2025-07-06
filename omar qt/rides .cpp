@@ -90,6 +90,7 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
 
     buildGraph();
 
+    string path = findShortestPath(find_st_num(start_st), find_st_num(end_st));
 
     // Assuming this runs after user chooses start and end station
     int real_zone = 0;
@@ -110,7 +111,7 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
                 double requiredBalance = arr_subscription[i].wallet_sub.zonesPrice[real_zone - 1];
                 if (arr_users[indexofuser].sub.balancew >= requiredBalance) {
 
-                    string path = findShortestPath(find_st_num(start_st), find_st_num(end_st));
+                    /*string path = findShortestPath(find_st_num(start_st), find_st_num(end_st));*/
                     ui->viewride->clear();
                     ui->viewride->setText(QString::fromStdString(path));
 
@@ -151,7 +152,7 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
         if (!not_your_zone) {
             if (arr_users[indexofuser].sub.remaining_trips > 0) {
 
-                string path = findShortestPath(find_st_num(start_st), find_st_num(end_st));
+                /*string path = findShortestPath(find_st_num(start_st), find_st_num(end_st));*/
                 ui->viewride->clear();
                 ui->viewride->setText(QString::fromStdString(path));
 
@@ -205,7 +206,7 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
     //    close(); // Or go to main menu
     //}
 
-    string path = findShortestPath(find_st_num(start_st), find_st_num(end_st));
+    
 
     ui->viewride->clear();
     ui->viewride->setText(QString::fromStdString(path));

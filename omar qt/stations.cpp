@@ -161,6 +161,7 @@ string findShortestPath(int start, int end) {
         path_string += ("-> " + currName + "\n");
         lastLine = line;
         lastName = currName;
+        stationcnt++;
     }
 
 

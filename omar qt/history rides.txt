@@ -7,3 +7,12 @@ ID2     Helwan.     El-Ma'sara.     8     27/06/2025
 ID3     Torah_El-Balad.     Helwan.     727     27/06/2025
 ID2     Helwan.     Torah_El-Balad.     729     01/07/2025
 ID2     Helwan.     Hadayek_Helwan.     729     01/07/2025
+ID2     Helwan.     Ain_Helwan.     727     02/07/2025
+ID2     Helwan.     Torah_El-Asmant.     726     02/07/2025
+ID2     Helwan.     Mohamed_Naguib.     725     02/07/2025
+ID2     Helwan.     Kobri_El-Qobba.     724     02/07/2025
+ID2     Helwan.     El-Marg.     723     02/07/2025
+ID3     Helwan.     Torah_El-Balad.     179     02/07/2025
+ID4     Helwan.     Hadayek_Helwan.     8     02/07/2025
+ID4     Helwan.     Giza.     20     02/07/2025
+ID5     Attaba.     Hadayek_El-Zaitoun.     729     02/07/2025
